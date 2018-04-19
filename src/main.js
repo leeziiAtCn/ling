@@ -12,7 +12,11 @@ const components = {
 const install = Vue => {
   Vue.component('test', components.test)
 }
-const zy = {
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+const lingcy = {
   install
 }
-module.exports.default = module.exports = zy
+module.exports.default = module.exports = lingcy

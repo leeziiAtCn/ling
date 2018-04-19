@@ -8,6 +8,6 @@ module.exports = {
   filename: 'index.js',
   path: path.resolve(__dirname, '../dist'),
   publicPath: '/',
-  library: 'zy',
+  library: 'lingCy',
   libraryTarget: 'umd',
 }
