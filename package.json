@@ -4,10 +4,10 @@
   "description": "test",
   "author": "leezii",
   "private": false,
+  "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.config.js  --open  --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=./build/webpack.config.js",
-    "deploy": "git reset --hard && git pull &&  \"C:/Program Files (x86)/Yarn/bin/yarn\" && \"C:/Program Files (x86)/Yarn/bin/yarn\" build"
   },
   "dependencies": {
     "uuid": "^3.1.0",
