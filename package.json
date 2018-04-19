@@ -10,13 +10,8 @@
     "deploy": "git reset --hard && git pull &&  \"C:/Program Files (x86)/Yarn/bin/yarn\" && \"C:/Program Files (x86)/Yarn/bin/yarn\" build"
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "element-ui": "2.2.1",
-    "md5": "^2.2.1",
     "uuid": "^3.1.0",
-    "vue": "^2.5.8",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "vue": "^2.5.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",
