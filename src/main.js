@@ -10,7 +10,6 @@ const components = {
   test
 }
 const install = Vue => {
-  console.log('asdasdasd')
   Vue.component('test', components.test)
 }
 const zy = {

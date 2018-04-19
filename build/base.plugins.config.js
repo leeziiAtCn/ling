@@ -11,5 +11,5 @@ module.exports =  [
   new webpack.DefinePlugin({
     CUR_ENV: JSON.stringify(CUR_ENV)
   }),
-  new ExtractTextPlugin('style/styles.css'),
+  new ExtractTextPlugin('styles.css'),
 ]
