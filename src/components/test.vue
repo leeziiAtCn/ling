@@ -1,6 +1,6 @@
 <template>
 <div class="box">
-  test double
+  test 3rd
 </div>
 </template>
 <style lang="less" scoped>
