@@ -1,13 +1,14 @@
 {
   "name": "lingcy",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "vue components store",
   "author": "leezii",
   "private": false,
   "license": "MIT",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.config.js  --open  --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=./build/webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=./build/webpack.config.js",
+    "test": "echo 1"
   },
   "main":"dist/index.js",
   "dependencies": {
