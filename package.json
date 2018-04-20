@@ -6,16 +6,19 @@
   "private": false,
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.config.js  --open  --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=./build/webpack.config.js",
+    "doc": "cross-env NODE_ENV=development webpack-dev-server --config=./build/webpack.dev.js  --open  --hot",
+    "pack:doc": "cross-env NODE_ENV=development webpack --config=./build/webpack.doc.release.js  --progress   --hide-modules",
+    "pack:release": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=./build/webpack.release.js",
     "test": "echo 1"
   },
-  "main":"dist/index.js",
+  "main": "dist/index.js",
   "dependencies": {
     "uuid": "^3.1.0",
-    "vue": "^2.5.8"
+    "vue": "^2.5.8",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "address": "^1.0.3",
     "autoprefixer": "^7.2.3",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -40,6 +43,7 @@
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "webpack-merge": "^4.1.2"
   }
 }
