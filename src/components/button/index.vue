@@ -1,5 +1,9 @@
 <template>
-  <div :class="classes">{{this.text}}</div>
+  <button :class="classes" :disabled="disabled">
+    <span>
+      <slot></slot>
+    </span>
+  </button>
 </template>
 
 <script>
@@ -8,12 +12,16 @@
     name: 'lcButton',
     props: {
       type: {
-        validator: v => ['primary', 'danger'],
+        validator: v => ['primary', 'danger', 'success', 'info', 'warning', 'light', 'dark', 'secondary'].includes(v),
         default: 'primary'
       },
       text: {
         type: String,
         default: 'btn'
+      },
+      disabled: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {

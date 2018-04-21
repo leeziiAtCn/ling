@@ -1,16 +1,103 @@
-@btn-prefix-cls: ~"@{css-prefix}btn";
-.@{btn-prefix-cls} {
-  display: inline-block;
-  &-primary {
-    background-color: @primary;
+@base-prefix-cls: ~"@{css-prefix}btn";
+
+.base (@bgColor,@textColor:#FFFFFF) {
+  background-color: @bgColor;
+  border-color: @bgColor;
+  color: @textColor;
+}
+
+.hover (@bgColor,@textColor:#FFFFFF) {
+  &:hover:not(:disabled) {
+    background-color: @bgColor;
+    border-color: @bgColor;
+    color: @textColor;
   }
-  &success {
-    background-color: @success;
+}
+
+.active(@bgColor) {
+  &:active {
+    background-color: @bgColor;
+    outline: 0;
+  }
+}
+
+.focus(@shadowColor) {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px tint(@shadowColor);
+  }
+}
+
+.@{base-prefix-cls} {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+  }
+  &-primary {
+    .base(@primary);
+    .hover(tint(@primary, -20%));
+    .focus(@primary);
+    .active(@primary);
+  }
+  &-secondary {
+    .base(@secondary);
+    .hover(tint(@secondary, -20%));
+    .focus(@secondary);
+    .active(@secondary);
+  }
+  &-success {
+    .base(@success);
+    .hover(tint(@success, -20%));
+    .focus(@success);
+    .active(@success);
   }
   &-danger {
-    background-color: @danger;
+    .base(@danger);
+    .hover(tint(@danger, -20%));
+    .focus(@danger);
+    .active(@danger);
+
   }
   &-warning {
-    background-color: @warning;
+    .base(@warning);
+    .hover(tint(@warning, -20%));
+    .focus(@warning);
+    .active(@warning);
+  }
+  &-info {
+    .base(@info);
+    .hover(tint(@info, -20%));
+    .focus(@info);
+    .active(@info);
+  }
+  &-light {
+    .base(@light, #212529);
+    .hover(tint(@light, -100%), #212529);
+    .focus(@light);
+    .active(@light);
+  }
+  &-dark {
+    .base(@dark);
+    .hover(tint(@dark, -20%));
+    .focus(@dark);
+    .active(@dark);
   }
 }

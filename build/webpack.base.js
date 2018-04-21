@@ -20,11 +20,20 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.less|\.css/,
+        test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader!postcss-loader!less-loader'
-        })
+          use: [
+            {
+              loader: 'css-loader',
+              options:{
+                minimize: true //css压缩
+              }
+            },
+            'postcss-loader',
+            'less-loader'
+          ],
+        }),
       }
     ]
   },
