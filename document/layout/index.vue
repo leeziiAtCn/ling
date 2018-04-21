@@ -1,6 +1,6 @@
 <template>
   <div>
-    <lc-button type="primary" class="a" text="asdasd" @click.native="test"></lc-button>
+    <lc-button type="danger" class="a" text="asdasd" @click.native="test"></lc-button>
   </div>
 </template>
 <style scoped>
