@@ -13,8 +13,7 @@
   </div>
 </template>
 <style scoped>
-  .a {
-  }
+
 </style>
 <script>
   export default {
