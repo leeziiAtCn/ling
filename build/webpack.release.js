@@ -12,7 +12,7 @@ module.exports = merge(baseConfig, {
   output:{
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: `lingcy-v${pkg.version}.[name].js`,
+    filename: `lingcy.js`,
   },
 
   plugins:[
