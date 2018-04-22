@@ -21,7 +21,7 @@ module.exports = merge(baseConfig, {
     noInfo: false,
     compress: true,
     host: address.ip(),
-    port: 8086,
+    port: 8087,
     disableHostCheck: true,
     proxy: {
       '*': {

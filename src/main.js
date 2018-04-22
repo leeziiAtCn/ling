@@ -8,6 +8,7 @@ import Button from './components/button'
 const components = {
   Button
 }
+console.log(Button)
 const install = Vue => {
   Vue.component(components.Button.name, components.Button)
 }
@@ -18,4 +19,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 const lingcy = {
   install
 }
-module.exports.default = module.exports = lingcy
+// console.log(lingcy)
+// module.exports.default = module.exports = lingcy
+export default lingcy

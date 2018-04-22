@@ -15,13 +15,13 @@
         validator: v => ['primary', 'danger', 'success', 'info', 'warning', 'light', 'dark', 'secondary'].includes(v),
         default: 'primary'
       },
-      text: {
-        type: String,
-        default: 'btn'
-      },
       disabled: {
         type: Boolean,
         default: false
+      },
+      size: {
+        validator: v = ['mini', 'small', 'large'].includes(v),
+        default: 'small'
       }
     },
     computed: {
