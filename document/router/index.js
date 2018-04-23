@@ -11,9 +11,23 @@ const routes = [
   {
     path: '/',
     component: require('@/layout'),
+    children: [
+      {
+        path: '/button',
+        component: require('@/page/button')
+      },
+      {
+        path: '/alert',
+        component: require('@/page/alert')
+      },
+      {
+        path: '/breadcrumb',
+        component: require('@/page/breadcrumb')
+      }
+    ]
   }
 ]
-export const router =  new VueRouter({
+export const router = new VueRouter({
   routes
 })
 

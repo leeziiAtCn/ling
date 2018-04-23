@@ -12,7 +12,8 @@
     name: 'lcButton',
     props: {
       type: {
-        validator: v => ['primary', 'danger', 'success', 'info', 'warning', 'light', 'dark', 'secondary'].includes(v),
+        validator: v =>
+          ['primary', 'danger', 'success', 'info', 'warning', 'light', 'dark', 'secondary', 'text'].includes(v),
         default: 'primary'
       },
       disabled: {
@@ -20,18 +21,26 @@
         default: false
       },
       size: {
-        validator: v = ['mini', 'small', 'large'].includes(v),
+        validator: v => ['mini', 'small', 'large'].includes(v),
         default: 'small'
+      },
+      outline: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
       classes () {
         return [
           `${prefixCls}`,
-          `${prefixCls}-${this.type}`
+          {
+            [`${prefixCls}-${this.type}`]: !!this.type,
+            [`${prefixCls}-${this.size}`]: !!this.size,
+            [`${prefixCls}-${this.type}-outline`]: !!this.outline,
+          }
         ]
       }
-    }
+    },
   }
 </script>
 

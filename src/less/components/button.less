@@ -1,4 +1,4 @@
-@base-prefix-cls: ~"@{css-prefix}btn";
+@btn-prefix-cls: ~"@{css-prefix}btn";
 
 .base (@bgColor,@textColor:#FFFFFF) {
   background-color: @bgColor;
@@ -15,35 +15,126 @@
 }
 
 .active(@bgColor) {
-  &:active {
+  &:active:not(:disabled) {
     background-color: @bgColor;
-    outline: 0;
   }
 }
 
-.focus(@shadowColor) {
+.focus(@bgColor) {
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px tint(@shadowColor);
+    box-shadow: 0 0 0 3px tint(@bgColor);
   }
 }
 
-.@{base-prefix-cls} {
+.@{btn-prefix-cls} {
   display: inline-block;
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
-  font-size: 1rem;
+  padding: 6px 12px;
+  font-size: 16px;
   line-height: 1.5;
-  border-radius: .25rem;
+  border-radius: 4px;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &-primary {
+    .base(@primary);
+    .hover(tint(@primary, -20%));
+    .focus(@primary);
+    .active(@primary);
+    &-outline {
+      background-color: transparent;
+      color: @primary;
+    }
+  }
+  &-secondary {
+    .base(@secondary);
+    .hover(tint(@secondary, -20%));
+    .focus(@secondary);
+    .active(@secondary);
+    &-outline {
+      background-color: transparent;
+      color: @secondary;
+    }
+  }
+  &-success {
+    .base(@success);
+    .hover(tint(@success, -20%));
+    .focus(@success);
+    .active(@success);
+    &-outline {
+      background-color: transparent;
+      color: @success;
+    }
+  }
+  &-danger {
+    .base(@danger);
+    .hover(tint(@danger, -20%));
+    .focus(@danger);
+    .active(@danger);
+    &-outline {
+      background-color: transparent;
+      color: @danger;
+    }
+  }
+  &-warning {
+    .base(@warning);
+    .hover(tint(@warning, -20%));
+    .focus(@warning);
+    .active(@warning);
+    &-outline {
+      background-color: transparent;
+      color: @warning;
+    }
+  }
+  &-info {
+    .base(@info);
+    .hover(tint(@info, -20%));
+    .focus(@info);
+    .active(@info);
+    &-outline {
+      background-color: transparent;
+      color: @info;
+    }
+  }
+  &-light {
+    .base(@light, #212529);
+    .hover(tint(@light, -100%), #212529);
+    .focus(@light);
+    .active(@light);
+    &-outline {
+      background-color: transparent;
+      color: @light;
+    }
+  }
+  &-dark {
+    .base(@dark);
+    .hover(tint(@dark, -20%));
+    .focus(@dark);
+    .active(@dark);
+    &-outline {
+      background-color: transparent;
+      color: @dark;
+    }
+  }
+
+
+  &-mini {
+    padding: 4px 8px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3.2px;
+  }
+  &-large {
+    padding: 8px 16px;
+    font-size: 20px;
+    line-height: 1.5;
+    border-radius: 4.8px;
+  }
   &:not(:disabled) {
     cursor: pointer;
   }
@@ -51,53 +142,12 @@
     opacity: .65;
     cursor: not-allowed;
   }
-  &-primary {
-    .base(@primary);
-    .hover(tint(@primary, -20%));
-    .focus(@primary);
-    .active(@primary);
+  &-text {
+    color: @primary;
+    background-color: transparent;
+    &:focus {
+      outline: 0;
+    }
   }
-  &-secondary {
-    .base(@secondary);
-    .hover(tint(@secondary, -20%));
-    .focus(@secondary);
-    .active(@secondary);
-  }
-  &-success {
-    .base(@success);
-    .hover(tint(@success, -20%));
-    .focus(@success);
-    .active(@success);
-  }
-  &-danger {
-    .base(@danger);
-    .hover(tint(@danger, -20%));
-    .focus(@danger);
-    .active(@danger);
 
-  }
-  &-warning {
-    .base(@warning);
-    .hover(tint(@warning, -20%));
-    .focus(@warning);
-    .active(@warning);
-  }
-  &-info {
-    .base(@info);
-    .hover(tint(@info, -20%));
-    .focus(@info);
-    .active(@info);
-  }
-  &-light {
-    .base(@light, #212529);
-    .hover(tint(@light, -100%), #212529);
-    .focus(@light);
-    .active(@light);
-  }
-  &-dark {
-    .base(@dark);
-    .hover(tint(@dark, -20%));
-    .focus(@dark);
-    .active(@dark);
-  }
 }

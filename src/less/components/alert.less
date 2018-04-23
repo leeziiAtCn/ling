@@ -1,0 +1,39 @@
+@alert-prefix-cls: ~"@{css-prefix}alert";
+.alert (@bgColor,@textColor:#004085) {
+  background-color: tint(@bgColor,80%);
+  border-color: tint(@bgColor, 60%);
+  color: @textColor;
+}
+
+.@{alert-prefix-cls} {
+  position: relative;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  &-primary {
+    .alert(@primary)
+  }
+  &-secondary {
+    .alert(@secondary)
+  }
+  &-success {
+    .alert(@success)
+  }
+  &-danger {
+    .alert(@danger)
+  }
+  &-warning {
+    .alert(@warning)
+  }
+  &-info {
+    .alert(@info)
+  }
+  &-light {
+    .alert(@light,#818182)
+  }
+  &-dark {
+    .alert(@dark)
+  }
+
+}

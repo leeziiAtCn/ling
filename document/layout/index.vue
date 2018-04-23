@@ -1,18 +1,48 @@
 <template>
-  <div>
-    <lc-button type="primary">primary</lc-button>
-    <lc-button type="secondary" @click.native="test">secondary</lc-button>
-    <lc-button type="info" @click.native="test">info</lc-button>
-    <lc-button type="success" @click.native="test">success</lc-button>
-    <lc-button type="dark" @click.native="test">dark</lc-button>
-    <lc-button type="light" @click.native="test">light</lc-button>
-    <lc-button type="warning" @click.native="test">warning</lc-button>
-    <lc-button type="danger" @click.native="test">danger</lc-button>
-    <lc-button type="primary" :disabled="true">disabled</lc-button>
-
+  <div class="layout">
+    <div class="header"></div>
+    <div class="content">
+      <div class="nav">
+        <p>
+          <lc-button type="text" @click.native="$router.push('/button')">Button</lc-button>
+        </p>
+        <p>
+          <lc-button type="text" @click.native="$router.push('/alert')">Alert</lc-button>
+        </p>
+        <p>
+          <lc-button type="text" @click.native="$router.push('/breadcrumb')">Breadcrumb</lc-button>
+        </p>
+      </div>
+      <div class="main">
+        <router-view/>
+      </div>
+    </div>
   </div>
 </template>
-<style scoped>
+<style lang="less" scoped>
+  .layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header {
+      line-height: 60px;
+      height: 60px;
+      background: red;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+    }
+    .nav {
+      width: 200px;
+      background: yellow;
+    }
+    .main {
+      flex: 1;
+      padding: 16px;
+    }
+  }
+
 
 </style>
 <script>
