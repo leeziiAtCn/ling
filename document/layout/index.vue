@@ -7,6 +7,9 @@
           <lc-button type="text" @click.native="$router.push('/button')">Button</lc-button>
         </p>
         <p>
+          <lc-button type="text" @click.native="$router.push('button-group')">Button-group</lc-button>
+        </p>
+        <p>
           <lc-button type="text" @click.native="$router.push('/alert')">Alert</lc-button>
         </p>
         <p>

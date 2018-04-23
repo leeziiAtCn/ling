@@ -17,6 +17,10 @@ const routes = [
         component: require('@/page/button')
       },
       {
+        path: '/button-group',
+        component: require('@/page/button-group')
+      },
+      {
         path: '/alert',
         component: require('@/page/alert')
       },

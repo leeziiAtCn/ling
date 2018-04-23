@@ -7,13 +7,15 @@ import './less/index.less'
 import Button from './components/button'
 import Alert from './components/alert'
 import BreadCrumb from './components/breadcrumb'
+import ButtonGroup from './components//button-group'
 
 const components = {
-  Button, Alert, BreadCrumb
+  Button, Alert, BreadCrumb, ButtonGroup
 }
 const install = Vue => {
   Vue.component(components.Button.name, components.Button)
   Vue.component(components.Alert.name, components.Alert)
+  Vue.component(components.ButtonGroup.name, components.ButtonGroup)
   Vue.component(components.BreadCrumb.name, components.BreadCrumb)
 }
 if (typeof window !== 'undefined' && window.Vue) {

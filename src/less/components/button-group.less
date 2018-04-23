@@ -1,0 +1,14 @@
+@btn-group-prefix-cls: ~"@{css-prefix}btn-group";
+.@{btn-group-prefix-cls} {
+  background: yellow;
+  display: inline-flex;
+  .lc-btn {
+    border-radius: 0;
+  }
+  .lc-btn:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+  .lc-btn:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+}
